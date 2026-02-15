@@ -1,44 +1,45 @@
-# BharatGov AI – System Design Document
+# GovGuide – System Design Document
 
-## System Architecture
+## Architecture Overview
 
-The platform follows a modular architecture consisting of the following layers:
+User → Streamlit Frontend → Python Backend → Recommendation Engine → Scheme Database → Results
 
-User Interface → Application Backend → AI Processing Layer → Scheme Data Storage → Response Generation
+## Components
 
-## Main Modules
+### Frontend
+- Built using Streamlit
+- Provides user input interface
+- Displays recommended schemes
 
-### 1. User Interface
+### Backend
+- Developed using Python
+- Processes user input
+- Matches input with scheme eligibility
 
-The frontend will allow users to interact with the system using a simple and clean interface. Users can enter their information or ask questions related to government schemes.
+### Recommendation Engine
+- Uses Natural Language Processing techniques
+- Matches user eligibility with scheme dataset
 
-### 2. Backend Server
-
-The backend will manage user requests, process input data, and communicate with the AI components. It will also handle data retrieval and response delivery.
-
-### 3. AI Processing Module
-
-This module will analyze user input and determine relevant government schemes using intelligent matching techniques and language understanding.
-
-### 4. Data Storage
-
-This component will store structured information about various government schemes including eligibility criteria, benefits, and application process.
-
-### 5. Response Module
-
-After processing, the system will generate a clear and user-friendly response containing recommended schemes and related information.
+### Database
+- Government scheme dataset stored in CSV format
+- Contains scheme name, eligibility, and benefits
 
 ## Workflow
 
-1. User enters their query or personal details
-2. Backend receives and processes the input
-3. AI module analyzes eligibility
-4. Matching schemes are retrieved from database
-5. Response is generated and displayed to user
+1. User enters occupation or eligibility details
+2. Frontend sends input to backend
+3. Backend processes input using recommendation engine
+4. System searches scheme database
+5. Matching schemes are returned
+6. Results displayed to user
+
+## Scalability
+
+System can be deployed on AWS EC2 and use S3 for data storage.
 
 ## Future Enhancements
 
-- Mobile application support
-- Multi-language support
-- Integration with official government portals
-- Voice-based interaction
+- AI chatbot integration
+- Voice input support
+- Real-time scheme API integration
+- Mobile application
